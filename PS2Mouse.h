@@ -22,6 +22,7 @@ class PS2Mouse
     void set_mode(int);
   public:
     PS2Mouse(int, int, int mode = REMOTE);
+    int btn_states[3];
     void initialize();
     int clock_pin();
     int data_pin();

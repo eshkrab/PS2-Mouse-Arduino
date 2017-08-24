@@ -162,6 +162,9 @@ int * PS2Mouse::report(int data[]) {
   data[0] = read(); // Status bit
   data[1] = read_movement_x(data[0]); // X Movement Packet
   data[2] = read_movement_y(data[0]); // Y Movement Packet
+  data[3] = (data[0] & (1<<0)) ? 1 : 0; //first bit
+  data[4] = (data[0] & (1<<1)) ? 1 : 0; //second bit
+  data[5] = (data[0] & (1<<2)) ? 1 : 0; //third bit
   return data;
 }
 
